@@ -1,0 +1,14 @@
+
+services:
+  express:
+    build: .
+    container_name: exp
+    network_mode: bridge
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    ports:
+      - 3000:3000
+    volumes:
+      - "${HOME}/NoSQL/Projekty:/home/node"
+
+

@@ -1,0 +1,48 @@
+
+### Obraz express-ext
+#################################################################################################
+
+Polecenie budowania obrazu, korzystające z pliku Dockerfile:
+docker build -t express-ext .
+
+Polecenie uruchomienia obrazu z wolumenem zamontowanym z katalogu /home/grupaX/NoSQL/Projekty:
+docker run -v "${HOME}/NoSQL/Projekty:/home/node" -it --rm -p 3000:3000 --name exp express-ext
+
+
+Polecenie podłączenia się do działającego kontenera z użyciem kolejnego terminala:
+docker attach exp
+
+albo ewentualnie
+docker exec -it exp sh
+
+
+
+### Obraz redis-stack
+#################################################################################################
+
+Polecenie uruchomienia obrazu z wolumenem zamontowanym z katalogu /home/grupaX/NoSQL/Redis/data oraz /home/grupaX/NoSQL/Redis/files:
+docker run -it -p 6379:6379 -p 8001:8001 --rm -v "${HOME}/NoSQL/Redis/files:/root" -v "${HOME}/NoSQL/Redis/data:/data" --name red redis/redis-stack:latest
+
+
+Polecenie podłączenia się do działającego kontenera z użyciem kolejnego terminala:
+docker exec -it red bash
+
+
+
+### Obraz mongo
+#################################################################################################
+
+Polecenie uruchomienia obrazu z wolumenem zamontowanym w trzech katalogach:
+• /home/grupaX/NoSQL/MongoDB/db
+• /home/grupaX/NoSQL/MongoDB/configdb
+• /home/grupaX/NoSQL/MongoDB/files
+
+docker run -p 27017:27017 --rm --name mongo -v "${HOME}/NoSQL/MongoDB/db:/data/db" -v "${HOME}/NoSQL/MongoDB/configdb:/data/configdb" -v "${HOME}/NoSQL/MongoDB/files:/home/ubuntu" mongo:latest
+
+
+Polecenie podłączenia się do działającego kontenera z użyciem kolejnego terminala:
+docker exec -it mongo bash
+
+
+
+

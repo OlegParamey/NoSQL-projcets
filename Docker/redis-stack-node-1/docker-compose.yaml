@@ -1,0 +1,26 @@
+
+services:
+  redis:
+    image: redis/redis-stack:latest
+    container_name: red
+    network_mode: bridge
+    # stdin_open: true # docker run -i
+    # tty: true        # docker run -t
+    ports:
+      - 6379:6379
+      - 8001:8001
+    volumes:
+      - "${HOME}/NoSQL/Redis/data:/data"
+      - "${HOME}/NoSQL/Redis/files:/root"
+  express:
+    build: .
+    container_name: exp
+    network_mode: host
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    # ports:
+    #   - 3000:3000
+    volumes:
+      - "${HOME}/NoSQL/Projekty:/home/node"
+
+

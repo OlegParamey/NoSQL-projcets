@@ -1,0 +1,26 @@
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongo
+    network_mode: bridge
+    # stdin_open: true # docker run -i
+    # tty: true        # docker run -t
+    ports:
+      - 27017:27017
+    volumes:
+      - "${HOME}/NoSQL/MongoDB/data:/data/db"
+      - "${HOME}/NoSQL/MongoDB/configdb:/data/configdb"
+      - "${HOME}/NoSQL/MongoDB/files:/home/ubuntu"
+  express:
+    build: .
+    container_name: exp
+    network_mode: host
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    # ports:
+    #   - 3000:3000
+    volumes:
+      - "${HOME}/NoSQL/Projekty:/home/node"
+
+

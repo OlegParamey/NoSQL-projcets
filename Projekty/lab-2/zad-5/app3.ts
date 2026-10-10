@@ -1,8 +1,13 @@
-import express, { type Express, type Request, type Response } from 'express';
+import express, {
+	type Express,
+	type NextFunction,
+	type Request,
+	type Response,
+} from 'express';
 
 const app: Express = express();
 
-let warstwaPosredniaMenu = (req: Request, res: Response, next) => {
+let warstwaPosredniaMenu = (req: Request, res: Response, next: NextFunction) => {
 	let menu = `
   <p><strong>APP_3</strong>
   <a href="/">Strona główna</a> -
@@ -11,7 +16,7 @@ let warstwaPosredniaMenu = (req: Request, res: Response, next) => {
   </p>
   <hr>
   `;
-	res.header('Content-Type', 'text/html');
+	res.header('Content-Type', 'text/html; charset=utf-8');
 	res.write(menu);
 	next();
 };

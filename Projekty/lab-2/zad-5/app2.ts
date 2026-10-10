@@ -20,7 +20,7 @@ let warstwaPosredniaMenu = (req: Request, res: Response, next: NextFunction) => 
   </p>
   <hr>
   `;
-	res.header('Content-Type', 'text/html');
+	res.header('Content-Type', 'text/html; charset=utf-8');
 	res.write(menu);
 	next();
 };
@@ -46,7 +46,7 @@ app.get('/witaj', warstwaPosredniaMenu, (req: Request, res: Response) => {
 app.get(
 	'/inny',
 	warstwaPosredniaMenu,
-	function (req: Request, res: Response, next: NextFunction) {
+	(req: Request, res: Response, next: NextFunction) => {
 		res.write(
 			'<h3>Inna kolejność warstw pośrednich. Wiele funkcji dla tego samego adresu</h3>',
 		);

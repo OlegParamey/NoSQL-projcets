@@ -37,3 +37,19 @@ Thumbs.db
 .vscode/
 .idea/
 *.swp
+
+
+# Archives
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz
+*.tgz
+*.bz2
+*.xz
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+*.jar
+*.war

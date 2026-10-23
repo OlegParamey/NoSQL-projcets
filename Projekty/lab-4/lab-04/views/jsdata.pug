@@ -1,0 +1,46 @@
+extends content
+block page
+  style.
+    .c0 {color: red;}
+    .c1 {color: green;}
+    .c2 {color: blue;}
+
+  - var p2 = function (n) { return String(n).padStart(2, '0'); }
+  - var godz = function (d) { return p2(d.getHours()) + ':' + p2(d.getMinutes()) + ':' + p2(d.getSeconds()); }
+  - var dataTxt = data.pocz.getFullYear() + '-' + (data.pocz.getMonth() + 1) + '-' + data.pocz.getDate()
+  - var lista = data.przyjaciele.map(function (p) { return p.imie + ' ' + p.nazw; }).join(', ')
+
+  //- sposób I: różnica godzin i minut z metod obiektu Date
+  - var g1 = data.koniec.getHours() - data.pocz.getHours()
+  - var m1 = data.koniec.getMinutes() - data.pocz.getMinutes()
+  - if (m1 < 0) { m1 += 60; g1--; }
+
+  //- sposób II: różnica w milisekundach przeliczona na h:m:s
+  - var ms = data.koniec - data.pocz
+  - var g2 = Math.floor(ms / 3600000)
+  - var m2 = Math.floor((ms % 3600000) / 60000)
+  - var s2 = Math.floor((ms % 60000) / 1000)
+
+  h1 #{data.wyprawa} dnia #{dataTxt}
+  p Pomysłodawca wycieczki: #{data.imie} #{data.nazwisko}, urodzony #{data.data_ur}
+  p Lista uczestników: #{lista}.
+
+  h3 Za pomocą pętli for
+  ul
+    // każdy wiersz ma przpisaną inną klasę o wartości wyliczonej modulo 3
+    for p, i in data.przyjaciele
+      li(class='c' + (i % 3)) #{p.nazw}
+
+  h3 Plan wycieczki
+  ul
+    li rozpoczęcie o #{godz(data.pocz)}
+    li zakończenie o #{godz(data.koniec)}
+    li czas trwania I: #{g1}:#{p2(m1)}
+    li czas trwania II: #{g2}:#{p2(m2)}:#{p2(s2)}
+    li liczba uczestników: #{data.przyjaciele.length}
+    li zdobyło szczyt: #{zdobyli}
+    li szczytu nie zdobyli:
+    ol
+      each p in data.przyjaciele
+        if !p.szczyt
+          li #{p.imie} #{p.nazw}

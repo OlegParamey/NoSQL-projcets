@@ -1,0 +1,14 @@
+extends szablon
+
+block content
+  section
+    nav
+      ul
+        each s in data.strony
+          li
+            if s.link.startsWith('http')
+              a(href=s.link, target='_blank')= s.nazwa
+            else
+              a(href='/' + s.link)= s.nazwa
+    article
+      block page

@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1= title
+  if games.length
+    each game in games
+      p
+        | #{game.title} (#{game.year}) - #{game.genre} 
+        a(href=`/games/${game.id}`) Details
+  else
+    p Brak gier.

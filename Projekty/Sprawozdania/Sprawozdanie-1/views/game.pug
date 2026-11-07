@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= game.title
+  p #{game.year} · #{game.genre} · #{game.developer}
+  p= game.description
+  h2 Platformy
+  ul
+    each platform in game.platforms
+      li= platform
+  p
+    a(href='/games') ← Wróć do listy

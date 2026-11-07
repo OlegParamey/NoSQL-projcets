@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1 Profil
+  p Zalogowany jako #{claims.login}.
+  h2 Twój token JWT
+  p Token składa się z trzech części: nagłówek.dane.podpis
+  pre= header
+  pre= payload
+  pre= signature
+  h3 Dane w tokenie (payload)
+  pre= JSON.stringify(claims, null, 2)
+  p
+    a(href='/logout') Wyloguj

@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1 Gry komputerowe
+  p W bazie jest #{total} gier.
+  h2 Najnowsze gry
+  ul
+    each g in latest
+      li
+        a(href=`/games/${g.id}`)= g.title
+        |  (#{g.year})
+  p
+    a(href='/games') Zobacz wszystkie gry →

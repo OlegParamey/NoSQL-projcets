@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  h1= title
+  p Ile dni zajmie przejście gry?
+  if errors.length
+    ul
+      each e in errors
+        li= e
+  form(method='post' action='/calculator')
+    label Długość gry [godz.]
+    input(type='number' name='hours' step='0.5' value=values.hours)
+    br
+    label Godzin dziennie
+    input(type='number' name='perDay' step='0.5' value=values.perDay)
+    br
+    label Data startu
+    input(type='date' name='startDate' value=values.startDate)
+    br
+    button(type='submit') Oblicz
+  if result
+    h2 Wynik
+    p Potrzebujesz #{result.days} dni. Skończysz #{result.end}.

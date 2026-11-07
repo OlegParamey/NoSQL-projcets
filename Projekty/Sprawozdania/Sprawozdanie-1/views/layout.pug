@@ -1,0 +1,32 @@
+doctype html
+html(lang='pl')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    title #{title} | Gry komputerowe
+    link(rel='stylesheet' href='/stylesheets/style.css')
+  body
+    header
+      nav
+        a(href='/') Start
+        |  | 
+        a(href='/games') Gry
+        |  | 
+        a(href='/genres') Gatunki
+        |  | 
+        a(href='/search') Szukaj
+        |  | 
+        a(href='/calculator') Kalkulator
+        |  | 
+        a(href='/about') O projekcie
+        |  | 
+        if user
+          a(href='/profile')= user.login
+          |  | 
+          a(href='/logout') Wyloguj
+        else
+          a(href='/login') Zaloguj
+          |  | 
+          a(href='/register') Rejestracja
+    main
+      block content

@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  h1= title
+  form(method='get' action='/search')
+    label Tytuł
+    input(type='text' name='q' value=values.q)
+    br
+    label Gatunek
+    select(name='genre')
+      option(value='') - dowolny -
+      each g in genres
+        option(value=g selected=(values.genre === g))= g
+    br
+    label Rok od
+    input(type='number' name='yearFrom' value=values.yearFrom)
+    br
+    button(type='submit') Szukaj
+  if submitted
+    h2 Wyniki (#{results.length})
+    if results.length
+      ul
+        each g in results
+          li
+            a(href=`/games/${g.id}`)= g.title
+            |  (#{g.year}, #{g.genre})
+    else
+      p Nic nie znaleziono.

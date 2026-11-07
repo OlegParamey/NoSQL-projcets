@@ -1,0 +1,92 @@
+[
+	{
+		"id": "tetris",
+		"title": "Tetris",
+		"year": 1984,
+		"genre": "puzzle",
+		"developer": "Aleksiej Pażytnow",
+		"platforms": ["Elektronika 60", "PC", "Game Boy"],
+		"description": "Układanie spadających klocków w pełne linie. Jedna z najczęściej portowanych gier w historii."
+	},
+	{
+		"id": "super-mario-bros",
+		"title": "Super Mario Bros.",
+		"year": 1985,
+		"genre": "platformówka",
+		"developer": "Nintendo",
+		"platforms": ["NES"],
+		"description": "Klasyczna platformówka z wąsatym hydraulikiem, która ustaliła standardy gatunku."
+	},
+	{
+		"id": "doom",
+		"title": "Doom",
+		"year": 1993,
+		"genre": "FPS",
+		"developer": "id Software",
+		"platforms": ["MS-DOS", "PC"],
+		"description": "Szybka strzelanka z perspektywy pierwszej osoby, która rozpopularyzowała gatunek FPS i modyfikacje tworzone przez graczy."
+	},
+	{
+		"id": "half-life-2",
+		"title": "Half-Life 2",
+		"year": 2004,
+		"genre": "FPS",
+		"developer": "Valve",
+		"platforms": ["PC"],
+		"description": "Strzelanka z zaawansowaną fizyką (silnik Source) i fabułą opowiadaną bez przerywników filmowych."
+	},
+	{
+		"id": "minecraft",
+		"title": "Minecraft",
+		"year": 2011,
+		"genre": "sandbox",
+		"developer": "Mojang",
+		"platforms": ["PC", "PlayStation", "Xbox", "Nintendo Switch", "telefony"],
+		"description": "Otwarty świat z klocków, w którym gracz buduje, zbiera surowce i przetrwa noc."
+	},
+	{
+		"id": "dark-souls",
+		"title": "Dark Souls",
+		"year": 2011,
+		"genre": "action RPG",
+		"developer": "FromSoftware",
+		"platforms": ["PC", "PlayStation 3", "Xbox 360"],
+		"description": "Wymagający action RPG w mrocznym świecie, znany z wysokiego poziomu trudności i opowiadania fabuły przez otoczenie."
+	},
+	{
+		"id": "witcher-3",
+		"title": "The Witcher 3: Wild Hunt",
+		"year": 2015,
+		"genre": "RPG",
+		"developer": "CD Projekt RED",
+		"platforms": ["PC", "PlayStation 4", "Xbox One", "Nintendo Switch"],
+		"description": "Polska gra RPG z otwartym światem, w której Geralt z Rivii szuka swojej przybranej córki Ciri."
+	},
+	{
+		"id": "stardew-valley",
+		"title": "Stardew Valley",
+		"year": 2016,
+		"genre": "symulacja",
+		"developer": "ConcernedApe",
+		"platforms": ["PC", "PlayStation", "Xbox", "Nintendo Switch", "telefony"],
+		"description": "Spokojna gra o prowadzeniu farmy, stworzona w dużej mierze przez jedną osobę."
+	},
+	{
+		"id": "zelda-botw",
+		"title": "The Legend of Zelda: Breath of the Wild",
+		"year": 2017,
+		"genre": "przygodowa",
+		"developer": "Nintendo",
+		"platforms": ["Nintendo Switch", "Wii U"],
+		"description": "Gra z otwartym światem, w której gracz swobodnie eksploruje Hyrule i rozwiązuje zagadki oparte na fizyce."
+	},
+	{
+		"id": "cyberpunk-2077",
+		"title": "Cyberpunk 2077",
+		"year": 2020,
+		"genre": "RPG",
+		"developer": "CD Projekt RED",
+		"platforms": ["PC", "PlayStation", "Xbox"],
+		"description": "RPG z otwartym światem w futurystycznym Night City, oparty na papierowej grze Cyberpunk 2020."
+	}
+]
